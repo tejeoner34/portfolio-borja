@@ -525,3 +525,34 @@ li > img {
     gap: 2rem;
   }
 }
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+  width: 90%;
+  max-width: 800px;
+  background-color: rgba(128, 128, 128, 0.5); /* Fondo gris con opacidad */
+  border-radius: 16px; /* Bordes redondeados */
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para resaltar el contenedor */
+}
+
+.image-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  margin: 0 auto; /* Centrar imágenes en filas incompletas */
+  transition: transform 0.3s ease; /* Transición suave */
+}
+
+.image-grid img:hover {
+  transform: scale(1.2); /* Aumentar tamaño ligeramente */
+}
+
+@media (min-width: 601px) {
+  .image-grid img:nth-child(2n + 1) {
+    justify-self: center;
+  }
+}
